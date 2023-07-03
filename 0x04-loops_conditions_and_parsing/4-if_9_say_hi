@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script uses while and if to display "Best School" or "hi" (if n=9)
+
+n=10
+hi_position=9
+hi=$((hi_position - 1))
+count=0
+
+while [ $count -lt $n ]
+do
+	if [ $count -eq $hi ]
+	then
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	count=$((count + 1))
+done
