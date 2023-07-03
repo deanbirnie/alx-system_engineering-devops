@@ -6,7 +6,6 @@ file="school"
 if [ -e "$file" ]
 then
     echo "school file exists"
-
     if [ -s "$file" ]
     then
         echo "school file is not empty"
@@ -15,9 +14,9 @@ then
     fi
     if [ -f "$file" ]
     then
-        echo "school file is a regular file"
+        echo "school is a regular file"
     else
-        :
+	:
     fi
 else
     echo "school file does not exist"
