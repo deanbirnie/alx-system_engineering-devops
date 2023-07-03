@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# this script iterates through the current directory and prints the names of all
+# normal files starting with the character after the first dash in each file
+# name.
+
+for file in *
+do
+    if [ -f "$file" ] && [[ "$file" != .* ]]
+    then
+        name="${file#*-}"
+	echo "$name"
+    fi
+done
