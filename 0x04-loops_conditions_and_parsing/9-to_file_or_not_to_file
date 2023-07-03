@@ -13,11 +13,17 @@ then
         if [ -f "$file" ]
 	then
             echo "school file is a regular file"
-        else
-            :
+	else
+	    :
         fi
     else
         echo "school file is empty"
+	if [ -f "$file" ]
+	then
+	    echo "school file is a regular file"
+	else
+	    :
+	fi
     fi
 
 else
