@@ -4,7 +4,6 @@
 
 function handle_sigterm {
     echo "I am invincible!!!"
-    exit 0
 }
 
 trap 'handle_sigterm' SIGTERM
