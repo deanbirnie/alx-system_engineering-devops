@@ -7,6 +7,8 @@ function handle_sigterm {
     exit 0
 }
 
+trap 'handle_sigterm' SIGTERM
+
 while true
 do
     echo "To infinity and beyond"
