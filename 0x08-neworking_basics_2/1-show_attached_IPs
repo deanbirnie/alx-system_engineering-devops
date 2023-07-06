@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 addresses on the machine
+# from which the script is executed
+ipv4_addresses=$(ip -4 addr show | awk '/inet / {split($2, a, "/"); print a[1]}')
+
+for address in $ipv4_addresses; do
+    echo "$address"
+done
