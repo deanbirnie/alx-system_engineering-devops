@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays alllistening sockets and their PID's
+# IP + port = socket
+netstat -lp
