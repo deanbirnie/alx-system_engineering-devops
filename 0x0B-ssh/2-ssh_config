@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script edits the host configuration to use only an RSA key pair for authentication
+private_key_path="~/.ssh/school"
+
+cat <<EOF > ~/.ssh/config
+Host *
+    IdentityFile $private_key_path
+    PreferredAuthentications publickey
+    PasswordAuthentication no
+EOF
+
+chmod 600 $private_key_path
