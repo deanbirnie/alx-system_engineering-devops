@@ -2,12 +2,12 @@
 # disables password authentication
 file_line { 'Password Authentication No':
   ensure => 'present',
-  path   => '/~/ssh/ssh_config',
+  path   => '/etc/ssh/ssh_config',
   line   => '    PasswordAuthentication no',
 }
 
 file_line { 'Identity File school':
   ensure => 'present',
-  path   => '/~/ssh/ssh_config',
+  path   => '/etc/ssh/ssh_config',
   line   => '    IdentityFile ~/.ssh/school',
 }
