@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script tp issue commands on remote server
+
+server_ip="100.26.246.172"
+user_command=$1
+
+ssh -i ~/.ssh/id_rsa ubuntu@$server_ip $user_command
