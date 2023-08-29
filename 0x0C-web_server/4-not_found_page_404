@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is based on 1-install_nginx_web_server but
+# additionally creates a 301 redirection
+
+sudo apt-get update && sudo apt-get install nginx -y
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+sudo sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://youtu.be/zi8ShAosqzI?si=ISOGQzl3DtUrIDm- permanent;" /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/page_404.html
+
+sudo sed -i "46i error_page 404 /page_404.html;" /etc/nginx/sites-available/default
+
+sudo /etc/init.d/nginx restart
