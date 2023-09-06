@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script fixes issues with the current configuration of the designated server
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
