@@ -1,0 +1,20 @@
+# Configure server with a UFW firewall and block all incoming traffic but that
+# over ports 22, 80 and 443.
+
+# update repositories and install ufw if not installed
+sudo apt-get update
+sudo apt-get install -y ufw
+
+# avoid issues updating config by first disabling ufw
+sudo ufw disable
+
+# configure according to task parameters
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+
+# enable the firewall last so as not to lock out the user from ssh over port 22
+sudo ufw enable
