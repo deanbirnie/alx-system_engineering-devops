@@ -4,8 +4,8 @@ This script fetches all tasks for all employees and records them in a
 structured JSON file, 'todo_all_employees.json'.
 """
 
-import requests
 import json
+import requests
 
 USERS_URL = "https://jsonplaceholder.typicode.com/users"
 TODOS_URL = "https://jsonplaceholder.typicode.com/todos"
