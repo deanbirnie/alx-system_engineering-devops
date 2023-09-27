@@ -47,6 +47,9 @@ def main():
 
         all_users_tasks[str(user_id)] = user_tasks
 
+    for user_id in map(str, range(1, len(users) + 1)):
+        all_users_tasks.setdefault(user_id, [])
+
     with open('todo_all_employees.json', 'w') as f:
         json.dump(all_users_tasks, f)
 
