@@ -10,6 +10,9 @@ def recurse(subreddit, hot_list=[], after=None):
     """
     Query reddit API and return list of hot posts.
     """
+    if subreddit is None or type(subreddit) is not str:
+        return None
+
     headers = {
         'User-Agent': 'script to scrape post titles by u/deano_southafrican'
         }
