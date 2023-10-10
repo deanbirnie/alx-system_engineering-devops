@@ -8,6 +8,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=None):
     """
+    Query reddit API and return list of hot posts.
     """
     headers = {
         'User-Agent': 'script to scrape post titles by u/deano_southafrican'
