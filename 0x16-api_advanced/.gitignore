@@ -3,3 +3,6 @@
 
 # ignore ALX provided files
 *main.py
+
+# ignore byte compiled files
+__pycache__/
