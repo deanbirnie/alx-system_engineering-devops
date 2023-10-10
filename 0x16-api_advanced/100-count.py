@@ -13,20 +13,23 @@ def count_words(subreddit, word_list, after=None,
     Queries reddit API and parses the title of all hot articles,
     prints a sorted count of given keywords.
     """
-    headers = {'User-Agent': 'script to parse all titles by u/deano_southafrican'}
-    
+    headers = {
+        'User-Agent': 'script to parse all titles by u/deano_southafrican'
+    }
+
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    
+
     if after:
         url += "?after={}".format(after)
-    
+
     response = requests.get(url, headers=headers, allow_redirects=False)
 
     if response.status_code != 200:
         if after is None:
             return
         else:
-            sorted_words = sorted(word_counts.items(), key=lambda x: (-x[1], x[0]))
+            sorted_words = sorted(word_counts.items(),
+                                  key=lambda x: (-x[1], x[0]))
             for word, count in sorted_words:
                 if count > 0:
                     print("{}: {}".format(word, count))
